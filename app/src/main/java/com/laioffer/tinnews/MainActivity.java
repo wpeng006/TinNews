@@ -5,9 +5,19 @@ import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.laioffer.tinnews.model.NewsResponse;
+import com.laioffer.tinnews.network.NewsApi;
+import com.laioffer.tinnews.network.RetrofitClient;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
 
 public class MainActivity extends AppCompatActivity {
     private NavController navController;
@@ -22,11 +32,12 @@ public class MainActivity extends AppCompatActivity {
         navController = navHostFragment.getNavController();
         NavigationUI.setupWithNavController(navView, navController);
         NavigationUI.setupActionBarWithNavController(this, navController);
-    }
 
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        return navController.navigateUp();
+
     }
+//    @Override
+//    public boolean onSupportNavigateUp() {
+//        return navController.navigateUp();
+//    }
 }
